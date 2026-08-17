@@ -22,7 +22,7 @@ class InventoryPage {
 
         const firstItem = this.products.first();
 
-        return await firstItem.locator('.inventory_item_name').textContent();
+        return firstItem.locator('.inventory_item_name').textContent();
     }
 
     async openCart() {
@@ -30,7 +30,7 @@ class InventoryPage {
     }
 
     async getPageTitle() {
-        return await this.pageTitle.textContent();
+        return this.pageTitle.textContent();
     }
 }
 

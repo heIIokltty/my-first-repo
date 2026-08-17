@@ -11,7 +11,7 @@ class CheckoutStepTwoPage {
     }
 
     async getTotalPrice() {
-        return await this.totalPrice.textContent();
+        return this.totalPrice.textContent();
     }
 }
 

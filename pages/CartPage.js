@@ -8,7 +8,7 @@ class CartPage {
     }
 
     async getItems() {
-        return await this.cartItems.allTextContents();
+        return this.cartItems.allTextContents();
     }
 
     async goToCheckout() {

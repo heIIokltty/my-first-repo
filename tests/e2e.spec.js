@@ -7,7 +7,6 @@ const { CheckoutStepOnePage } = require('../pages/CheckoutStepOnePage');
 const { CheckoutStepTwoPage } = require('../pages/CheckoutStepTwoPage');
 const { CheckoutCompletePage } = require('../pages/CheckoutCompletePage');
 
-
 test('E2E покупка самого дорогого товара', async ({ page }) => {
 
     const loginPage = new LoginPage(page);
@@ -19,35 +18,26 @@ test('E2E покупка самого дорогого товара', async ({ p
 
     await loginPage.open();
 
-
     await loginPage.login('standard_user', 'secret_sauce');
-
 
     const pageTitle = await inventoryPage.getPageTitle();
 
-
     expect(pageTitle).toBe('Products');
-
 
     const mostExpensiveItem =
         await inventoryPage.getMostExpensiveItemName();
 
     console.log('Самый дорогой товар:', mostExpensiveItem);
 
-
     await inventoryPage.addItemToCart(mostExpensiveItem);
 
-
     await inventoryPage.openCart();
-
 
     const cartItems = await cartPage.getItems();
 
     expect(cartItems).toContain(mostExpensiveItem);
 
-
     await cartPage.goToCheckout();
-
 
     await checkoutStepOnePage.fillUserInfo(
         'Test',
@@ -55,9 +45,7 @@ test('E2E покупка самого дорогого товара', async ({ p
         '12345'
     );
 
-
     await checkoutStepTwoPage.finishCheckout();
-
 
     const completionMessage =
         await checkoutCompletePage.getCompletionMessage();
