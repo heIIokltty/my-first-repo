@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 
-test('Пользователь должен успешно войти в систему', async ({ page }) => {
+test('Пользователь должен успешно войти в систему @ui', async ({ page }) => {
 
     await page.goto('https://www.saucedemo.com/');
 
@@ -16,7 +16,7 @@ test('Пользователь должен успешно войти в сис�
 });
 
 
-test('Заблокированный пользователь не может войти', async ({ page }) => {
+test('Заблокированный пользователь не может войти @ui', async ({ page }) => {
 
     await page.goto('https://www.saucedemo.com/');
 

@@ -22,7 +22,7 @@ test.describe('API-тесты для Restful-booker', () => {
     };
 
 
-    test('1. Создание бронирования - POST', async ({ request }) => {
+    test('1. Создание бронирования - POST @api', async ({ request }) => {
 
         const response = await request.post(`${baseURL}/booking`, {
             data: bookingData
@@ -53,7 +53,7 @@ test.describe('API-тесты для Restful-booker', () => {
     });
 
 
-    test('2. Получение бронирования - GET', async ({ request }) => {
+    test('2. Получение бронирования - GET @api', async ({ request }) => {
 
         const response = await request.get(
             `${baseURL}/booking/${bookingId}`
@@ -80,7 +80,7 @@ test.describe('API-тесты для Restful-booker', () => {
     });
 
 
-    test('3. Обновление бронирования - PUT', async ({ request }) => {
+    test('3. Обновление бронирования - PUT @api', async ({ request }) => {
 
         const authResponse = await request.post(`${baseURL}/auth`, {
             data: {
@@ -152,7 +152,7 @@ test.describe('API-тесты для Restful-booker', () => {
     });
 
 
-    test('4. Удаление бронирования - DELETE', async ({ request }) => {
+    test('4. Удаление бронирования - DELETE @api', async ({ request }) => {
 
         const response = await request.delete(
             `${baseURL}/booking/${bookingId}`,
